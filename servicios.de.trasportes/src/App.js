@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import Nav from './Components/Navbar'
 import './App.css';
+import {Routes,Route } from 'react-router-dom';
+
+import Clientes from './Components/clientes/Clientes'
+import Home from './Components/Home';
+import Solicitud from './Components/Solicitud/Solicitud';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     
+      <div className='pusher'>
+        <div className='ui inverted vertical masthead center aligned segment altura'>
+          <Nav/>
+           <Routes>
+              
+              <Route exact path='/' element={<Home/>}/>
+              <Route exact path='/Clientes' element={<Clientes/>}/>
+              <Route exact path='/Solicitudes' element={<Solicitud/>}/>
+           </Routes>
+              
+           
+            
+        </div>
+
+      </div>
+      
+    </>
   );
 }
 
